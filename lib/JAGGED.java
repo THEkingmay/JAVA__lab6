@@ -13,7 +13,7 @@ public class JAGGED{
         }
        
         d=0;
-         for(int i=0;i<num;i++){      //เมื่อกำหนดขนาด colum แล้วจึงสามารถกำหนดค่าของสนมาชิกในแต่บะ colum ได้
+         for(int i=0;i<num;i++){      //เมื่อกำหนดขนาด colum แล้วจึงสามารถกำหนดค่าของสนมาชิกในแต่ละ colum ได้
             for(int j=0;j<num-d;j++){
                 numOUT[i][j]=count;
                 System.out.print(numOUT[i][j]+" ");

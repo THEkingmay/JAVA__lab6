@@ -13,7 +13,7 @@ public class Main {
        
         case 2:
             DATA.exam2();
-            break;
+            break; 
        }
 
     }
