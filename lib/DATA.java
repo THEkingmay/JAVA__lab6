@@ -34,18 +34,8 @@ public class DATA {
    
     static void addText(int b){
         String text=Call_Text();
-        while(true){
-            try{
-            A.add(b,text);
+            A.add(b,text); /// ถ้าทำไม่ได้มันจะโชว์ exceptoin อัตโนมัติ /////////
             Show();
-            break;
-            }
-            catch(Exception e){
-                System.out.println(e);
-                Show();
-                break;
-            }
-        }
     }
     static void addText_index(){
        int index=Call_Index();
@@ -55,18 +45,18 @@ public class DATA {
     static void Edit(){
         int index=Call_Index();
         String text = Call_Text();
-        A.set(index, text);
+        A.set(index, text); /// ถ้าทำไม่ได้มันจะโชว์ exceptoin อัตโนมัติ /////////
         Show();
     }
     
     static void Remove_index(){
         int index = Call_Index();
-        A.remove(index);
+        A.remove(index); /// ถ้าทำไม่ได้มันจะโชว์ exceptoin อัตโนมัติ /////////
         Show();
     }
     static void Remove_value(){
         String text=Call_Text();
-        A.remove(text);
+        A.remove(text); /// ถ้าทำไม่ได้มันจะโชว์ exceptoin อัตโนมัติ /////////
         Show();
     }
 
