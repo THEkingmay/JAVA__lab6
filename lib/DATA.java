@@ -63,13 +63,14 @@ public class DATA {
         System.out.println("4) Remove Text by index");
         System.out.println("5) Remove Text by value");
         System.out.println("6) Exit");
-      do{
-         System.out.print("\nSelect--> "); select=sc.nextInt();
-         switch (select) {
+         try{
+            do{
+            System.out.print("\nSelect--> "); select=sc.nextInt();
+            switch (select) {
             case 1:
-                System.out.println("== Add text to back ==");
-                addText(A.size());
-                break;
+            System.out.println("== Add text to back ==");
+            addText(A.size());
+            break;
             case 2:
             System.out.println("== Add text by index ==");
             addText_index();
@@ -91,8 +92,42 @@ public class DATA {
             break;
             default: 
             System.out.println("Wrong input !! ");
-        
         }
-      }while(select!=6);
+       }while(select!=6);
+    }catch(Exception e){
+            System.out.println(e+" For input string : ");
+            Show();
+
+    }
+    //      switch (select) {
+    //         case 1:
+    //         System.out.println("== Add text to back ==");
+    //         addText(A.size());
+    //         break;
+    //         case 2:
+    //         System.out.println("== Add text by index ==");
+    //         addText_index();
+    //         break;
+    //         case 3:
+    //         System.out.println("== Edit text ==");
+    //         Edit();
+    //         break;
+    //         case 4:
+    //         System.out.println("== Remove text by index ==");
+    //         Remove_index();
+    //         break;
+    //         case 5:
+    //         System.out.println("== Remove text by value ==");
+    //         Remove_value();
+    //         break;
+    //         case 6:
+    //         System.out.println("Good Bye !");
+    //         break;
+    //         default: 
+    //         System.out.println("Wrong input !! ");
+        
+    //     }
+    //   }while(select!=6);
+
     }
 }
