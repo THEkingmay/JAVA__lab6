@@ -11,11 +11,18 @@ public class DATA {
         return text;
     }
     static int Call_Index(){
-
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Input index : ");
-        int index=sc.nextInt();
-        return index;
+        int index;
+        while (true) {
+           try{
+            Scanner sc=new Scanner(System.in);
+            System.out.print("Input index : ");
+            index=Integer.parseInt(sc.nextLine());
+            return index;
+           }
+           catch(Exception e){
+            System.out.println(e);
+           }
+        }
     }
     static void Show(){
         System.out.print("DATA = ");
@@ -27,8 +34,18 @@ public class DATA {
    
     static void addText(int b){
         String text=Call_Text();
-        A.add(b,text);
-        Show();
+        while(true){
+            try{
+            A.add(b,text);
+            Show();
+            break;
+            }
+            catch(Exception e){
+                System.out.println(e);
+                Show();
+                break;
+            }
+        }
     }
     static void addText_index(){
        int index=Call_Index();
@@ -55,7 +72,6 @@ public class DATA {
 
     public static void exam2(){
         Scanner sc=new Scanner(System.in);
-        int select;
         System.out.println("==== MENU ====");
         System.out.println("1) Add Text to back");
         System.out.println("2) Add Text at index");
@@ -63,9 +79,10 @@ public class DATA {
         System.out.println("4) Remove Text by index");
         System.out.println("5) Remove Text by value");
         System.out.println("6) Exit");
-         try{
+         while(true){
+            try{ int select;
             do{
-            System.out.print("\nSelect--> "); select=sc.nextInt();
+            System.out.print("\nSelect--> ");  select=Integer.parseInt(sc.nextLine()); 
             switch (select) {
             case 1:
             System.out.println("== Add text to back ==");
@@ -92,42 +109,13 @@ public class DATA {
             break;
             default: 
             System.out.println("Wrong input !! ");
-        }
-       }while(select!=6);
-    }catch(Exception e){
-            System.out.println(e+" For input string : ");
+           }
+           }while(select!=6);
+           break;  //From try///////////////////////////
+         }catch(Exception e){
+            System.out.println(e+" Only Integer!! ");
             Show();
-
-    }
-    //      switch (select) {
-    //         case 1:
-    //         System.out.println("== Add text to back ==");
-    //         addText(A.size());
-    //         break;
-    //         case 2:
-    //         System.out.println("== Add text by index ==");
-    //         addText_index();
-    //         break;
-    //         case 3:
-    //         System.out.println("== Edit text ==");
-    //         Edit();
-    //         break;
-    //         case 4:
-    //         System.out.println("== Remove text by index ==");
-    //         Remove_index();
-    //         break;
-    //         case 5:
-    //         System.out.println("== Remove text by value ==");
-    //         Remove_value();
-    //         break;
-    //         case 6:
-    //         System.out.println("Good Bye !");
-    //         break;
-    //         default: 
-    //         System.out.println("Wrong input !! ");
-        
-    //     }
-    //   }while(select!=6);
-
+        }
+      }
     }
 }
